@@ -32,7 +32,7 @@ The ETL (Extract, Transform, Load) process involves:
 
 -Data Handling: Local Storage
 
--Languages: TypeScript, HTML, CSS
+-Languages: TypeScript, HTML, CSS , Javascript , SCSS
 
 **✅ Conclusion**
 
