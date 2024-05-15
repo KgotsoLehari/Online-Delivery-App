@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-searchbar [(ngModel)]="searchTerm" (input)="filterRestaurants()"></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list *ngIf="filteredRestaurants.length > 0; else noResults">
+    <ion-item *ngFor="let restaurant of filteredRestaurants" lines="none" (click)="insertToCart(restaurant.name, restaurant.cuisine, restaurant.price,restaurant.image)">
+      <ion-thumbnail slot="start">
+        <img [src]="restaurant.image" />
+      </ion-thumbnail>
+      <ion-label>
+        <h4>{{ restaurant.name }}</h4>
+        <ion-text color="medium">
+          <p class="pStyle">{{ restaurant.cuisine }}</p>
+        </ion-text>
+        <span>
+          {{ restaurant.rating }}
+          <ion-icon name="star"></ion-icon>
+          .
+        </span>
+        {{ restaurant.deliveryTime }} mins . R{{ restaurant.price }} for two
+        <ion-text color="tertiary">
+          <p class="distance">{{ restaurant.distance }}</p>
+        </ion-text>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+  <ng-template #noResults>
+    <div>No results found</div>
+  </ng-template>
+</ion-content>

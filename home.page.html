@@ -1,0 +1,214 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title mode="md"> 
+      <!-- md=material design -->
+    
+     <span>Home</span> 
+    </ion-title>
+    <ion-avatar slot="end">
+      <img src="assets/Uber-Eats-Emblem.png" style="width: 150%;">
+    </ion-avatar>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <div class="borderBottom">
+  <swiper-container [modules]="swiperModules"
+  [slidesPerView]="1"
+  [CenteredSlides]="true"
+  [autoplay]="true"
+  [pagination]="{clickable:true, dynamicBullets: true}"
+  [spaceBetween]="20">
+    
+  <swiper-slide>
+    <img src="/assets/subwayFood.jpg" style="border-radius: 10px; width: 100%; height: 100%;">
+  </swiper-slide>
+  <swiper-slide>
+    <img src="/assets/wingstopFood.jpeg" style="border-radius: 10px; width: 100%; height: 100%;">
+  </swiper-slide>
+  <swiper-slide>
+    <img src="/assets/wendysFood.jpeg" style="border-radius: 10px; width: 100%; height: 100%;">
+  </swiper-slide>
+  <swiper-slide>
+    <img src="assets/starbucksdrink.jpeg" style="border-radius: 10px; width: 100%; height: 100%;">
+  </swiper-slide>
+  <swiper-slide>
+    <img src="assets/hanaFood.jpeg" style="border-radius: 10px; width: 100%; height: 100%;">
+  </swiper-slide>
+    
+  </swiper-container>
+</div>
+
+
+
+<!--Heading and Subheading-->
+<ion-list>
+  <ion-list-header class="ion-margin-bottom">
+    <ion-label>
+      <h4>Restaurants Nearby</h4>
+      <p>Discover unique tastes near you</p>
+    </ion-label>
+  </ion-list-header>
+
+
+
+
+  <!-- SUBWAY CARD -->
+  <ion-card>
+    <ion-item lines="none" (click)="addMenuItems('Subway', 'Babalas Sandwich Meal', 99.99,'assets/subway_meal.jpg')">
+      <ion-thumbnail slot="start">
+        <img src="/assets/subwayLogo.png" />
+      </ion-thumbnail>
+      <ion-label>
+        <h4>Subway</h4>
+        <ion-text color="medium">
+          <p class="pStyle">
+            Fast Food
+          </p>
+        </ion-text>
+        <span>
+          4.4
+          <ion-icon name="star"></ion-icon>
+          .
+        </span>
+        25 mins . R60.99 Reg Meal 
+        <ion-text color="tertiary">
+          <p class="distance">
+            2.50 kms away
+          </p>
+        </ion-text>
+      </ion-label>
+    </ion-item>
+  </ion-card>
+
+
+
+
+
+  <!-- Wingstop Car -->
+  <ion-card>
+    <ion-item lines="none" (click)="addMenuItems('Wings', 'Bonless Wings and Fries Combo ', 99.99,'assets/wingstop_combo.jpeg')">
+      <ion-thumbnail slot="start">
+        <img src="/assets/wingstopLogo.jpeg" />
+      </ion-thumbnail>
+      <ion-label>
+        <h4>Wingstop</h4>
+        <ion-text color="medium">
+          <p class="pStyle">
+            Fast Food
+          </p>
+        </ion-text>
+        <span>
+          4.1
+          <ion-icon name="star"></ion-icon>
+          .
+        </span>
+        30 mins . R99.99 Reg Meal
+        <ion-text color="tertiary">
+          <p class="distance">
+            5.00 km away
+          </p>
+        </ion-text>
+      </ion-label>
+    </ion-item>
+  </ion-card>
+
+
+
+
+  <!-- Wendys Card -->
+  <ion-card>
+    <ion-item lines="none" (click)="addMenuItems('Wendys', 'x2 Bacon and Cheese Burger Combo', 84.99,'assets/Wendys_combo.jpg')">
+      <ion-thumbnail slot="start">
+        <img src="/assets/wendysLogo.png" />
+      </ion-thumbnail>
+      <ion-label>
+        <h4>Wendys</h4>
+        <ion-text color="medium">
+          <p class="pStyle">
+            Fast Food
+          </p>
+        </ion-text>
+        <span>
+          4.1
+          <ion-icon name="star"></ion-icon>
+          .
+        </span>
+        10 mins . R84.99 for two combos
+        <ion-text color="tertiary">
+          <p class="distance">
+            1.20 kms away
+          </p>
+        </ion-text>
+      </ion-label>
+    </ion-item>
+  </ion-card>
+
+
+
+
+  <!-- Starbucks CARD -->
+  <ion-card>
+    <ion-item lines="none" (click)="addMenuItems('Starbucks', 'Grande Cappuccino', 54.99,'assets/starbuck_capp.png')">
+      <ion-thumbnail slot="start">
+        <img src="/assets/starbucksLogo.png" />
+      </ion-thumbnail>
+      <ion-label>
+        <h4>Starbucks</h4>
+        <ion-text color="medium">
+          <p class="pStyle">
+            Beverages
+          </p>
+        </ion-text>
+        <span>
+          3.9
+          <ion-icon name="star"></ion-icon>
+          .
+        </span>
+        15 mins . R54.99 for Cappuccino Grade
+        <ion-text color="tertiary">
+          <p class="distance">
+            0.59 kms away
+          </p>
+        </ion-text>
+      </ion-label>
+    </ion-item>
+  </ion-card>
+
+
+
+
+  
+
+  <!--Hanas Card-->
+
+  <ion-card>
+    <ion-item lines="none" (click)="addMenuItems('Hana Sushi', '6pc California Rolls', 50.00,'assets/CaliforniaRoll_Hana.jpg')">
+      <ion-thumbnail slot="start">
+        <img src="/assets/HanaLogo.png" />
+      </ion-thumbnail>
+      <ion-label>
+        <h4>Hana Sushi</h4>
+        <ion-text color="medium">
+          <p class="pStyle">
+            Asian Cuisine
+          </p>
+        </ion-text>
+        <span>
+          4.0
+          <ion-icon name="star"></ion-icon>
+          .
+        </span>
+        8 mins . R50.00 for 6pc alifornia rolls
+        <ion-text color="tertiary">
+          <p class="distance">
+            0.20 kms away
+          </p>
+        </ion-text>
+      </ion-label>
+    </ion-item>
+  </ion-card>
+</ion-list>
+
+</ion-content>
